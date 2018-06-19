@@ -9,7 +9,6 @@
 
 /*
     Description : 통신으로 사용할 ip 와 port 설정
-
 */
 
 import Foundation

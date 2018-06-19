@@ -13,6 +13,7 @@
 		BE76B23520D94E5400AF8B96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE76B23420D94E5400AF8B96 /* Assets.xcassets */; };
 		BE76B23820D94E5400AF8B96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE76B23620D94E5400AF8B96 /* LaunchScreen.storyboard */; };
 		BEB6CD4720D95D9700B76E10 /* APIservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB6CD4620D95D9700B76E10 /* APIservice.swift */; };
+		BEB6CD4920D95F0F00B76E10 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB6CD4820D95F0F00B76E10 /* Extension.swift */; };
 		BEF432E720D9559B00E04984 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF432E620D9559B00E04984 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		BE76B23720D94E5400AF8B96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE76B23920D94E5400AF8B96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEB6CD4620D95D9700B76E10 /* APIservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIservice.swift; sourceTree = "<group>"; };
+		BEB6CD4820D95F0F00B76E10 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		BEF432E620D9559B00E04984 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,6 +129,7 @@
 		BEF432E420D9553300E04984 /* Function */ = {
 			isa = PBXGroup;
 			children = (
+				BEB6CD4820D95F0F00B76E10 /* Extension.swift */,
 			);
 			path = Function;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				BEF432E720D9559B00E04984 /* LoginViewController.swift in Sources */,
 				BE76B22E20D94E5300AF8B96 /* AppDelegate.swift in Sources */,
 				BEB6CD4720D95D9700B76E10 /* APIservice.swift in Sources */,
+				BEB6CD4920D95F0F00B76E10 /* Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
