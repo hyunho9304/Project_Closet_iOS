@@ -1,0 +1,9 @@
+platform :ios, ‘9.0' # 사용 플랫폼
+use_frameworks!
+
+target 'Closet_iOS' do # 타겟 프로젝트 이름
+pod ‘Alamofire' # 사용하는 라이브러리들
+pod 'SwiftyJSON'
+pod 'Kingfisher'
+pod 'ObjectMapper'
+end
