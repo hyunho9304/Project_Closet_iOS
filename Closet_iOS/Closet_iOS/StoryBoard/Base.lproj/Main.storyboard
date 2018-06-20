@@ -314,11 +314,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconPerson" translatesAutoresizingMaskIntoConstraints="NO" id="FLr-Ji-BBd">
-                                <rect key="frame" x="137" y="215" width="100" height="100"/>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconPerson" translatesAutoresizingMaskIntoConstraints="NO" id="FLr-Ji-BBd">
+                                <rect key="frame" x="137.5" y="215" width="100" height="100"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="FLr-Ji-BBd" secondAttribute="height" multiplier="1:1" id="koI-fU-PUT"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="JO3-im-x6F" appends="YES" id="ybh-nK-hPc"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -380,6 +384,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DNI-AF-7BS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="JO3-im-x6F">
+                    <connections>
+                        <action selector="openImagePicker:" destination="E9l-iW-ToQ" id="38T-NX-Clr"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="821.60000000000002" y="40.929535232383813"/>
         </scene>

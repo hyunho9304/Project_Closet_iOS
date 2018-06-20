@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		46512E74EDCA67F9AB9F059B /* Pods_Closet_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1511C0332486FE8F26193391 /* Pods_Closet_iOS.framework */; };
+		BE3D348620DA3ACD00655FB8 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3D348520DA3ACD00655FB8 /* Server.swift */; };
 		BE76B22E20D94E5300AF8B96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE76B22D20D94E5300AF8B96 /* AppDelegate.swift */; };
 		BE76B23320D94E5300AF8B96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE76B23120D94E5300AF8B96 /* Main.storyboard */; };
 		BE76B23520D94E5400AF8B96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE76B23420D94E5400AF8B96 /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 		1511C0332486FE8F26193391 /* Pods_Closet_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Closet_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C036E4BB8D8E501792B09A0 /* Pods-Closet_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Closet_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Closet_iOS/Pods-Closet_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		AC69C403D9093A8DEC96D90B /* Pods-Closet_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Closet_iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Closet_iOS/Pods-Closet_iOS.release.xcconfig"; sourceTree = "<group>"; };
+		BE3D348520DA3ACD00655FB8 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		BE76B22A20D94E5300AF8B96 /* Closet_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Closet_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE76B22D20D94E5300AF8B96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE76B23220D94E5300AF8B96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				BEB6CD4620D95D9700B76E10 /* APIservice.swift */,
+				BE3D348520DA3ACD00655FB8 /* Server.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				BEB6CD4D20D97A5600B76E10 /* SignInViewController.swift in Sources */,
 				BEB6CD4720D95D9700B76E10 /* APIservice.swift in Sources */,
 				BEB6CD4920D95F0F00B76E10 /* Extension.swift in Sources */,
+				BE3D348620DA3ACD00655FB8 /* Server.swift in Sources */,
 				BEB6CD4B20D97A3000B76E10 /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

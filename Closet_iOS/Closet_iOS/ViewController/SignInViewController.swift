@@ -6,6 +6,10 @@
 //  Copyright © 2018년 박현호. All rights reserved.
 //
 
+/*
+ Description : 로그인 화면으로 시작하면 뜨는 화면이다.
+*/
+
 import UIKit
 
 class SignInViewController: UIViewController {
