@@ -50,9 +50,9 @@ class SignInViewController: UIViewController {
                 
                 if rescode == 201 {
                     
-                    guard let homeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController else { return }
-                    
-                    self.present( homeVC , animated: true , completion: nil )
+                    let homeVCtap = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "homeVCtap")
+
+                    self.present( homeVCtap , animated: true , completion: nil )
                     
                 } else if rescode == 401 {
                     
