@@ -63,6 +63,42 @@ struct Server : APIService {
             }
         }
     }
+    
+    //  로그인
+    static func reqSignIn( email : String , password : String , completion : @escaping (_ status : Int ) -> Void ) {
+        
+        let URL = url( "/member/signin" )
+        
+        let body: [String: Any] = [
+            "member_email" : email ,
+            "member_password" : password
+        ]
+        
+        Alamofire.request(URL, method: .post, parameters: body, encoding: JSONEncoding.default, headers: nil).responseData() { res in
+            
+            switch res.result {
+                
+            case .success:
+//
+//                print( JSON(res.result.value) )
+//                print( res.response?.statusCode)
+                if( res.response?.statusCode == 201){
+                    completion(201)
+                }
+                else if( res.response?.statusCode == 400 ) {
+                    completion(401)
+                }
+                else {
+                    completion(500)
+                }
+                break
+                
+            case .failure(let err):
+                print(err.localizedDescription)
+                break
+            }
+        }
+    }
 
     
 }
