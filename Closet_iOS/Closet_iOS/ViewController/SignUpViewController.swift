@@ -60,11 +60,16 @@ class SignUpViewController: UIViewController , Gallery {
                 if rescode == 201 {
                     
                     let alert = UIAlertController(title: "회원가입 성공", message: "환영환영", preferredStyle: .alert )
-                    let ok = UIAlertAction(title: "확인", style: .default, handler: { (_) in self.dismiss(animated: true, completion: nil)} )
+                    let ok = UIAlertAction(title: "확인", style: .default, handler: { (_) in
+                        
+                        guard let homeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController else { return }
+                        
+                        self.present( homeVC , animated: true , completion: nil )
+                        
+                    } )
                     
                     alert.addAction( ok )
-                    
-                    //  회원가입 시 바로 홈화면으로
+       
                     self.present(alert , animated: true , completion: nil)
                     
                 } else if rescode == 401 {

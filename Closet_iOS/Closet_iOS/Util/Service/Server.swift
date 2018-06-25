@@ -65,7 +65,7 @@ struct Server : APIService {
     }
     
     //  로그인
-    static func reqSignIn( email : String , password : String , completion : @escaping (_ status : Int ) -> Void ) {
+    static func reqSignIn( email : String , password : String , completion : @escaping (_ status : Int , _ flag : Int) -> Void ) {
         
         let URL = url( "/member/signin" )
         
@@ -79,17 +79,25 @@ struct Server : APIService {
             switch res.result {
                 
             case .success:
-//
-//                print( JSON(res.result.value) )
-//                print( res.response?.statusCode)
-                if( res.response?.statusCode == 201){
-                    completion(201)
+                
+                if( res.response?.statusCode == 201 ){
+                    completion( 201 , 0 )
                 }
-                else if( res.response?.statusCode == 400 ) {
-                    completion(401)
+                else if( res.response?.statusCode == 401 ) {
+                    
+                    if let value = res.result.value {
+                        let message = JSON(value)["message"].string
+                        
+                        if message == "failed login_email"{
+                            completion( 401 , 1 )
+                        }
+                        else if message == "failed login_password" {
+                            completion( 401 , 2 )
+                        }
+                    }
                 }
                 else {
-                    completion(500)
+                    completion(500 , 0 )
                 }
                 break
                 

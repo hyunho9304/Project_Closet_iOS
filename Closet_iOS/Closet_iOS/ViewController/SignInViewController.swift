@@ -31,14 +31,80 @@ class SignInViewController: UIViewController {
     
     func settingTarget() {
         
-        signUpBtn.addTarget(self, action: #selector(self.signUp(_:)), for: UIControlEvents.touchUpInside)
+        signUpBtn.addTarget(self, action: #selector(self.pressedSignUpBtn(_:)), for: UIControlEvents.touchUpInside)
+        signInBtn.addTarget(self, action: #selector(self.pressedSignInBtn(_:)), for: UIControlEvents.touchUpInside)
     }
     
-    @objc func signUp( _ sender : UIButton ) {
+    @objc func pressedSignUpBtn( _ sender : UIButton ) {
         
         guard let signUpVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SignUpViewController") as? SignUpViewController else { return }
         
         self.present( signUpVC , animated: true , completion: nil )
     }
+    
+    @objc func pressedSignInBtn( _ sender : UIButton ) {
+        
+        if( !(emailTextField.text?.isEmpty)! && !( (passwordTextField.text?.isEmpty)!) ) {
+            
+            Server.reqSignIn(email: emailTextField.text! , password: passwordTextField.text!) { (rescode , flag ) in
+                
+                if rescode == 201 {
+                    
+                    guard let homeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController else { return }
+                    
+                    self.present( homeVC , animated: true , completion: nil )
+                    
+                } else if rescode == 401 {
+                    
+                    if flag == 1 {
+                        
+                        let alert = UIAlertController(title: "로그인 실패", message: "이메일이 없거든요?;;", preferredStyle: .alert )
+                        let ok = UIAlertAction(title: "확인", style: .default, handler: nil )
+                        alert.addAction( ok )
+                        self.present(alert , animated: true , completion: nil)
+                        
+                    }
+                    else if flag == 2 {
+                        
+                        let alert = UIAlertController(title: "로그인 실패", message: "비밀번호 틀렸는데요..?", preferredStyle: .alert )
+                        let ok = UIAlertAction(title: "확인", style: .default, handler: nil )
+                        alert.addAction( ok )
+                        self.present(alert , animated: true , completion: nil)
+                        
+                    }
+                } else {
+                    
+                    let alert = UIAlertController(title: "서버", message: "통신상태를 확인하거라", preferredStyle: .alert )
+                    let ok = UIAlertAction(title: "확인", style: .default, handler: nil )
+                    alert.addAction( ok )
+                    self.present(alert , animated: true , completion: nil)
+                }
+            }
+        } else {
+            
+            let alert = UIAlertController(title: "로그인", message: "이메일과 비밀번호를 입력해주세요!!", preferredStyle: .alert )
+            let ok = UIAlertAction(title: "확인", style: .default, handler: nil )
+            
+            alert.addAction( ok )
+            
+            present( alert , animated: true , completion: nil )
+        }
+        
+    }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
