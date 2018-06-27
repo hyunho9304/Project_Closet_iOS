@@ -11,6 +11,7 @@
 		BE3D348620DA3ACD00655FB8 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3D348520DA3ACD00655FB8 /* Server.swift */; };
 		BE5BBB4820E12DAD0073CF2F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5BBB4720E12DAD0073CF2F /* HomeViewController.swift */; };
 		BE5BBB4B20E12EAA0073CF2F /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5BBB4A20E12EAA0073CF2F /* HomeCollectionViewCell.swift */; };
+		BE5BBB4F20E3A39A0073CF2F /* ClosetUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5BBB4E20E3A39A0073CF2F /* ClosetUploadViewController.swift */; };
 		BE76B22E20D94E5300AF8B96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE76B22D20D94E5300AF8B96 /* AppDelegate.swift */; };
 		BE76B23320D94E5300AF8B96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE76B23120D94E5300AF8B96 /* Main.storyboard */; };
 		BE76B23520D94E5400AF8B96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE76B23420D94E5400AF8B96 /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 		BE3D348520DA3ACD00655FB8 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		BE5BBB4720E12DAD0073CF2F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BE5BBB4A20E12EAA0073CF2F /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		BE5BBB4E20E3A39A0073CF2F /* ClosetUploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetUploadViewController.swift; sourceTree = "<group>"; };
 		BE76B22A20D94E5300AF8B96 /* Closet_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Closet_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE76B22D20D94E5300AF8B96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE76B23220D94E5300AF8B96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				BEB6CD4A20D97A3000B76E10 /* SignUpViewController.swift */,
 				BEB6CD4C20D97A5600B76E10 /* SignInViewController.swift */,
 				BE5BBB4720E12DAD0073CF2F /* HomeViewController.swift */,
+				BE5BBB4E20E3A39A0073CF2F /* ClosetUploadViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				BEB6CD4920D95F0F00B76E10 /* Extension.swift in Sources */,
 				BE3D348620DA3ACD00655FB8 /* Server.swift in Sources */,
 				BE5BBB4820E12DAD0073CF2F /* HomeViewController.swift in Sources */,
+				BE5BBB4F20E3A39A0073CF2F /* ClosetUploadViewController.swift in Sources */,
 				BEB6CD4B20D97A3000B76E10 /* SignUpViewController.swift in Sources */,
 				BE5BBB4B20E12EAA0073CF2F /* HomeCollectionViewCell.swift in Sources */,
 			);

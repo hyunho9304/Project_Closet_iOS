@@ -46,6 +46,8 @@ class SignInViewController: UIViewController {
         
         if( !(emailTextField.text?.isEmpty)! && !( (passwordTextField.text?.isEmpty)!) ) {
             
+            userdefault.set(gsno(emailTextField.text), forKey: "member_email")
+            
             Server.reqSignIn(email: emailTextField.text! , password: passwordTextField.text!) { (rescode , flag ) in
                 
                 if rescode == 201 {

@@ -107,6 +107,57 @@ struct Server : APIService {
             }
         }
     }
+    
+    //  새옷 등록
+    static func reqClosetUpload( closet_type : String , closet_memo : String , closet_image : UIImage , completion : @escaping (_ status : Int) -> Void ) {
+        
+        let URL = url( "/closet/upload" )
+        
+        let userdefault = UserDefaults.standard
+        guard let member_email = userdefault.string( forKey: "member_email" ) else { return }
+        
+        let member_emailData = member_email.data(using: .utf8 )
+        let closet_typeData = closet_type.data(using: .utf8 )
+        let closet_memoData = closet_memo.data(using: .utf8 )
+        let closet_imageData = UIImageJPEGRepresentation(closet_image , 0.3)
+        
+        Alamofire.upload(multipartFormData: { (multipartFormData) in
+            
+            multipartFormData.append( member_emailData! , withName : "member_email" )
+            multipartFormData.append( closet_typeData!, withName: "closet_type")
+            multipartFormData.append( closet_memoData!, withName: "closet_memo")
+            multipartFormData.append( closet_imageData!, withName: "closet_image" , fileName:"closet_image.jpg" , mimeType : "image/jpeg")
+            
+        }, to: URL, method: .post, headers: nil) { (encodingResult) in
+            
+            switch encodingResult {
+                
+            case .success(request: let upload , streamingFromDisk: _, streamFileURL: _) :
+                
+                upload.responseData(completionHandler: { (res) in
+                    switch res.result {
+                        
+                    case .success :
+                        
+                        if( res.response?.statusCode == 201){
+                            completion(201)
+                        }
+                        else {
+                            completion(500)
+                        }
+                        
+                        break
+                        
+                    case.failure(let err) :
+                        print( err.localizedDescription)
+                    }
+                })
+                
+            case .failure(let err ) :
+                print( err.localizedDescription)
+            }
+        }
+    }
 
     
 }
