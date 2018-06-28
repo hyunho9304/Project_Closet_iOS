@@ -11,8 +11,7 @@ import UIKit
 class HomeCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var homeImageView: UIImageView!
-    @IBOutlet weak var homeMemoView: UIView!
-    @IBOutlet weak var homeMemoLabel: UILabel!
     @IBOutlet weak var homeMemoTextView: UITextView!
+    @IBOutlet weak var homeDateLabel: UILabel!
     
 }

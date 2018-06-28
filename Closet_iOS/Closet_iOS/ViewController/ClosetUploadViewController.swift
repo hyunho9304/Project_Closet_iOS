@@ -65,7 +65,7 @@ class ClosetUploadViewController: UIViewController , UIPickerViewDelegate , UIPi
     //  새옷 업로드버튼 클릭
     @objc func pressedClosetUploadCompletionBtn( _ sender : UIButton ) {
         
-        if( !(closetUploadTypeTextField.text?.isEmpty)! && !( (closetUploadMemoTextField.text?.isEmpty)!) &&  (closetUploadImageView.image != #imageLiteral(resourceName: "uploadDefaultImage.jpeg") )) {
+        if( !(closetUploadTypeTextField.text?.isEmpty)! && !( (closetUploadMemoTextField.text?.isEmpty)!) &&  (closetUploadImageView.image != #imageLiteral(resourceName: "uploadImage.png") )) {
             
             Server.reqClosetUpload(closet_type: closetUploadTypeTextField.text! , closet_memo: closetUploadMemoTextField.text! , closet_image: closetUploadImageView.image!) { (rescode) in
                 

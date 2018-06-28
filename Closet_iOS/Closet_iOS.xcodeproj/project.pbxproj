@@ -16,6 +16,8 @@
 		BE76B23320D94E5300AF8B96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE76B23120D94E5300AF8B96 /* Main.storyboard */; };
 		BE76B23520D94E5400AF8B96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE76B23420D94E5400AF8B96 /* Assets.xcassets */; };
 		BE76B23820D94E5400AF8B96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE76B23620D94E5400AF8B96 /* LaunchScreen.storyboard */; };
+		BE857E5520E515AA0077396F /* Clothes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE857E5420E515AA0077396F /* Clothes.swift */; };
+		BE857E5720E554AF0077396F /* ClosetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE857E5620E554AF0077396F /* ClosetDetailViewController.swift */; };
 		BEB6CD4720D95D9700B76E10 /* APIservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB6CD4620D95D9700B76E10 /* APIservice.swift */; };
 		BEB6CD4920D95F0F00B76E10 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB6CD4820D95F0F00B76E10 /* Extension.swift */; };
 		BEB6CD4B20D97A3000B76E10 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB6CD4A20D97A3000B76E10 /* SignUpViewController.swift */; };
@@ -36,6 +38,8 @@
 		BE76B23420D94E5400AF8B96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE76B23720D94E5400AF8B96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE76B23920D94E5400AF8B96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE857E5420E515AA0077396F /* Clothes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clothes.swift; sourceTree = "<group>"; };
+		BE857E5620E554AF0077396F /* ClosetDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosetDetailViewController.swift; sourceTree = "<group>"; };
 		BEB6CD4620D95D9700B76E10 /* APIservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIservice.swift; sourceTree = "<group>"; };
 		BEB6CD4820D95F0F00B76E10 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		BEB6CD4A20D97A3000B76E10 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +123,7 @@
 				BEB6CD4C20D97A5600B76E10 /* SignInViewController.swift */,
 				BE5BBB4720E12DAD0073CF2F /* HomeViewController.swift */,
 				BE5BBB4E20E3A39A0073CF2F /* ClosetUploadViewController.swift */,
+				BE857E5620E554AF0077396F /* ClosetDetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -145,6 +150,7 @@
 		BEF432E320D9552A00E04984 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BE857E5420E515AA0077396F /* Clothes.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -296,9 +302,11 @@
 				BEB6CD4720D95D9700B76E10 /* APIservice.swift in Sources */,
 				BEB6CD4920D95F0F00B76E10 /* Extension.swift in Sources */,
 				BE3D348620DA3ACD00655FB8 /* Server.swift in Sources */,
+				BE857E5720E554AF0077396F /* ClosetDetailViewController.swift in Sources */,
 				BE5BBB4820E12DAD0073CF2F /* HomeViewController.swift in Sources */,
 				BE5BBB4F20E3A39A0073CF2F /* ClosetUploadViewController.swift in Sources */,
 				BEB6CD4B20D97A3000B76E10 /* SignUpViewController.swift in Sources */,
+				BE857E5520E515AA0077396F /* Clothes.swift in Sources */,
 				BE5BBB4B20E12EAA0073CF2F /* HomeCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
