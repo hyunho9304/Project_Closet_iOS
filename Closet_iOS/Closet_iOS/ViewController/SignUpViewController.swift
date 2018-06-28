@@ -24,15 +24,23 @@ class SignUpViewController: UIViewController , Gallery {
     @IBOutlet weak var signUpBackBtn: UIButton!
     @IBOutlet weak var signUpCompletionBtn: UIButton!
     
+    //  keyboard
+    @IBOutlet var mainView: UIView!
+    var keyboardUp : Bool!
+    var keyboardDismissGesture: UITapGestureRecognizer?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setting()
+        setKeyboardSetting()
     }
     
     func setting() {
         
         homeController = self
+        keyboardUp = false
         
         signUpBackBtn.addTarget(self, action: #selector(self.pressedBackBtn(_:)), for: UIControlEvents.touchUpInside)
         signUpCompletionBtn.addTarget(self, action: #selector(self.pressedSignUpBtn(_:)), for: UIControlEvents.touchUpInside)
@@ -101,6 +109,7 @@ class SignUpViewController: UIViewController , Gallery {
 
 }
 
+//  겔러리 , 카메라
 extension SignUpViewController: UIImagePickerControllerDelegate,UINavigationControllerDelegate
 {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
@@ -117,3 +126,60 @@ extension SignUpViewController: UIImagePickerControllerDelegate,UINavigationCont
         signUpProfileImageView.image = image
     }
 }
+
+
+//  키보드
+extension SignUpViewController {
+    
+    func setKeyboardSetting() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
+    }
+    
+    @objc func keyboardWillShow(_ notification: Notification) {
+        adjustKeyboardDismissGesture(isKeyboardVisible: true)
+        
+        if keyboardUp == false {
+         
+            if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+                
+                mainView.frame.origin.y -= keyboardSize.height
+                self.view.layoutIfNeeded()
+                keyboardUp = true
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(_ notification: Notification) {
+        adjustKeyboardDismissGesture(isKeyboardVisible: false)
+        
+        if keyboardUp == true {
+         
+            if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+
+                mainView.frame.origin.y += keyboardSize.height
+                self.view.layoutIfNeeded()
+                keyboardUp = false
+            }
+        }
+    }
+    
+    func adjustKeyboardDismissGesture(isKeyboardVisible: Bool) {
+        if isKeyboardVisible {
+            if keyboardDismissGesture == nil {
+                keyboardDismissGesture = UITapGestureRecognizer(target: self, action: #selector(tapBackground))
+                view.addGestureRecognizer(keyboardDismissGesture!)
+            }
+        } else {
+            if keyboardDismissGesture != nil {
+                view.removeGestureRecognizer(keyboardDismissGesture!)
+                keyboardDismissGesture = nil
+            }
+        }
+    }
+    
+    @objc func tapBackground() {
+        self.view.endEditing(true)
+    }
+}
+

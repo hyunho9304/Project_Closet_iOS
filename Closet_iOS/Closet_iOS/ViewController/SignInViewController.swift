@@ -26,7 +26,7 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
         
         settingTarget()
-
+        hideKeyboardWhenTappedAround()
     }
     
     func settingTarget() {
@@ -91,22 +91,5 @@ class SignInViewController: UIViewController {
             
             present( alert , animated: true , completion: nil )
         }
-        
     }
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -12,10 +12,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Sign In View Controller Scene-->
         <scene sceneID="RES-06-MHb">
             <objects>
-                <viewController storyboardIdentifier="SignInViewController" id="gJs-yc-ZAU" customClass="SignInViewController" customModule="Closet_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInViewController" id="gJs-yc-ZAU" userLabel="Sign In View Controller Scene" customClass="SignInViewController" customModule="Closet_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AsS-SM-qrc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -376,6 +376,7 @@
                         <viewLayoutGuide key="safeArea" id="70X-Iz-1wG"/>
                     </view>
                     <connections>
+                        <outlet property="mainView" destination="xBR-xh-owo" id="b3C-br-iPV"/>
                         <outlet property="signUpBackBtn" destination="LrB-xf-hNi" id="2FR-PC-Dq0"/>
                         <outlet property="signUpCompletionBtn" destination="9H8-Ow-Cxx" id="APu-pV-D20"/>
                         <outlet property="signUpEmailTextField" destination="mZJ-k0-pM5" id="bCV-Hx-nB3"/>
@@ -523,7 +524,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HomeCollectionViewCell" id="vsr-es-fVa" customClass="HomeCollectionViewCell" customModule="Closet_iOS" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="HomeCollectionViewCell" reuseIdentifier="HomeCollectionViewCell" id="vsr-es-fVa" customClass="HomeCollectionViewCell" customModule="Closet_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1.5" width="382" height="475"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -563,21 +564,21 @@
                                                         <constraint firstItem="zxO-QM-uj0" firstAttribute="top" secondItem="441-3X-l13" secondAttribute="top" constant="8" id="zoG-nP-Eiz"/>
                                                     </constraints>
                                                 </view>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uploadDefaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="tfd-wP-Vaq">
-                                                    <rect key="frame" x="70" y="20" width="242" height="324.5"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uploadDefaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="tfd-wP-Vaq">
+                                                    <rect key="frame" x="38" y="32" width="306" height="306"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="tfd-wP-Vaq" secondAttribute="height" multiplier="238:319" id="wAe-3F-aMo"/>
+                                                        <constraint firstAttribute="width" secondItem="tfd-wP-Vaq" secondAttribute="height" multiplier="1:1" id="HQ7-4Y-CWO"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="tfd-wP-Vaq" firstAttribute="top" secondItem="vsr-es-fVa" secondAttribute="top" constant="20" id="3pI-Ch-ejM"/>
+                                            <constraint firstItem="tfd-wP-Vaq" firstAttribute="width" secondItem="vsr-es-fVa" secondAttribute="width" multiplier="300:375" id="6cg-22-fhY"/>
                                             <constraint firstAttribute="bottom" secondItem="441-3X-l13" secondAttribute="bottom" constant="10" id="74J-2x-KkM"/>
+                                            <constraint firstItem="tfd-wP-Vaq" firstAttribute="centerX" secondItem="vsr-es-fVa" secondAttribute="centerX" id="J7y-Y8-yQP"/>
                                             <constraint firstItem="441-3X-l13" firstAttribute="width" secondItem="vsr-es-fVa" secondAttribute="width" multiplier="326:375" id="N3V-mk-sX2"/>
-                                            <constraint firstItem="tfd-wP-Vaq" firstAttribute="width" secondItem="vsr-es-fVa" secondAttribute="width" multiplier="238:375" id="QwU-8T-mQy"/>
+                                            <constraint firstItem="tfd-wP-Vaq" firstAttribute="top" secondItem="vsr-es-fVa" secondAttribute="top" constant="32" id="Q0O-Pb-Vfh"/>
                                             <constraint firstItem="441-3X-l13" firstAttribute="centerX" secondItem="vsr-es-fVa" secondAttribute="centerX" id="cwH-QK-gxx"/>
-                                            <constraint firstItem="tfd-wP-Vaq" firstAttribute="centerX" secondItem="vsr-es-fVa" secondAttribute="centerX" id="n7A-ui-xRC"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="homeImageView" destination="tfd-wP-Vaq" id="tIk-e4-oxy"/>
@@ -608,7 +609,14 @@
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="mostViewed" id="YKX-W5-wCA"/>
                     <connections>
+                        <outlet property="homeClosetAccTypeBtn" destination="mhe-EN-9mb" id="wVZ-Cd-oyG"/>
+                        <outlet property="homeClosetBottomTypeBtn" destination="mkE-BG-q0Z" id="Nem-ti-TDp"/>
+                        <outlet property="homeClosetCodyRoomBtn" destination="14k-hu-Mse" id="lQW-8O-IUY"/>
+                        <outlet property="homeClosetOuterTypeBtn" destination="034-78-Jk1" id="rbZ-76-1K5"/>
+                        <outlet property="homeClosetShoesTypeBtn" destination="HFv-Te-HD9" id="AV5-Ke-1Es"/>
+                        <outlet property="homeClosetTopTypeBtn" destination="nAr-76-Wux" id="uyT-ux-zKG"/>
                         <outlet property="homeClosetUploadBtn" destination="x1q-LG-Xw8" id="49t-Jw-FPw"/>
+                        <outlet property="homeCollectionView" destination="j1A-Jg-7JM" id="WJU-fd-JI3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CYx-Kl-fP8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -663,16 +671,6 @@
                                     <constraint firstAttribute="width" secondItem="Pzh-uK-7jh" secondAttribute="height" multiplier="15:2" id="uvW-UK-PXu"/>
                                 </constraints>
                             </view>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uploadDefaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="axl-Vt-y6I">
-                                <rect key="frame" x="68" y="98" width="238" height="319"/>
-                                <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="axl-Vt-y6I" secondAttribute="height" multiplier="238:319" id="hRq-XH-kYA"/>
-                                </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="FLy-Sz-lcf" appends="YES" id="2pF-bS-A4h"/>
-                                </connections>
-                            </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="옷 종류" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IgT-hV-eM2">
                                 <rect key="frame" x="21" y="443" width="143" height="30"/>
                                 <constraints>
@@ -705,6 +703,16 @@
                                     <constraint firstAttribute="width" secondItem="UzX-lJ-p1W" secondAttribute="height" multiplier="332:109" id="E9G-hK-AM1"/>
                                 </constraints>
                             </view>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="uploadDefaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="axl-Vt-y6I">
+                                <rect key="frame" x="37" y="106" width="300" height="300"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="axl-Vt-y6I" secondAttribute="height" multiplier="1:1" id="TnA-3U-rmG"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="FLy-Sz-lcf" appends="YES" id="2pF-bS-A4h"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
@@ -712,17 +720,17 @@
                             <constraint firstItem="Oc6-9D-IBz" firstAttribute="top" secondItem="fin-cV-9eX" secondAttribute="top" id="1ks-Yg-N5V"/>
                             <constraint firstItem="Oc6-9D-IBz" firstAttribute="leading" secondItem="iBe-i0-ZZR" secondAttribute="leading" id="1vn-ff-5V0"/>
                             <constraint firstItem="Pzh-uK-7jh" firstAttribute="top" secondItem="UzX-lJ-p1W" secondAttribute="bottom" constant="10" id="92l-jR-mgQ"/>
+                            <constraint firstItem="axl-Vt-y6I" firstAttribute="top" secondItem="Oc6-9D-IBz" secondAttribute="bottom" constant="46" id="A0f-eq-XH6"/>
                             <constraint firstItem="Oc6-9D-IBz" firstAttribute="trailing" secondItem="iBe-i0-ZZR" secondAttribute="trailing" id="A5L-Lf-uhM"/>
                             <constraint firstItem="Pzh-uK-7jh" firstAttribute="bottom" secondItem="iBe-i0-ZZR" secondAttribute="bottom" id="Azo-E0-9EX"/>
-                            <constraint firstItem="axl-Vt-y6I" firstAttribute="width" secondItem="fin-cV-9eX" secondAttribute="width" multiplier="238:375" id="BE5-jV-6Dl"/>
-                            <constraint firstItem="axl-Vt-y6I" firstAttribute="top" secondItem="iBe-i0-ZZR" secondAttribute="top" constant="78" id="GJf-Hb-dGk"/>
+                            <constraint firstItem="axl-Vt-y6I" firstAttribute="width" secondItem="fin-cV-9eX" secondAttribute="width" multiplier="300:375" id="Bnz-vr-lc4"/>
                             <constraint firstItem="Pzh-uK-7jh" firstAttribute="leading" secondItem="iBe-i0-ZZR" secondAttribute="leading" id="Inu-te-WBC"/>
                             <constraint firstItem="UzX-lJ-p1W" firstAttribute="top" secondItem="IgT-hV-eM2" secondAttribute="bottom" constant="25" id="JwH-Up-m3A"/>
                             <constraint firstItem="Pzh-uK-7jh" firstAttribute="width" secondItem="fin-cV-9eX" secondAttribute="width" multiplier="375:375" id="Kip-PZ-qKc"/>
                             <constraint firstItem="UzX-lJ-p1W" firstAttribute="width" secondItem="fin-cV-9eX" secondAttribute="width" multiplier="332:375" id="NTr-xt-3Gd"/>
                             <constraint firstItem="IgT-hV-eM2" firstAttribute="width" secondItem="fin-cV-9eX" secondAttribute="width" multiplier="143:375" id="Nq8-6H-0es"/>
                             <constraint firstItem="UzX-lJ-p1W" firstAttribute="centerX" secondItem="iBe-i0-ZZR" secondAttribute="centerX" id="RzE-wa-pAe"/>
-                            <constraint firstItem="axl-Vt-y6I" firstAttribute="centerX" secondItem="iBe-i0-ZZR" secondAttribute="centerX" id="byO-9l-zUC"/>
+                            <constraint firstItem="axl-Vt-y6I" firstAttribute="centerX" secondItem="iBe-i0-ZZR" secondAttribute="centerX" id="hn9-wp-Tl7"/>
                             <constraint firstItem="IgT-hV-eM2" firstAttribute="leading" secondItem="UzX-lJ-p1W" secondAttribute="leading" id="jGv-a5-gnS"/>
                             <constraint firstItem="Pzh-uK-7jh" firstAttribute="trailing" secondItem="iBe-i0-ZZR" secondAttribute="trailing" id="ufd-Bg-gTv"/>
                             <constraint firstItem="Oc6-9D-IBz" firstAttribute="width" secondItem="fin-cV-9eX" secondAttribute="width" multiplier="375:375" id="vLM-Fg-8yJ"/>
@@ -735,6 +743,7 @@
                         <outlet property="closetUploadImageView" destination="axl-Vt-y6I" id="jng-bf-tE2"/>
                         <outlet property="closetUploadMemoTextField" destination="UEq-cH-EHq" id="qLq-7i-D0w"/>
                         <outlet property="closetUploadTypeTextField" destination="IgT-hV-eM2" id="q0C-ly-abc"/>
+                        <outlet property="mainView" destination="fin-cV-9eX" id="xVF-rh-DpL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Ax-LE-5Jo" userLabel="First Responder" sceneMemberID="firstResponder"/>
