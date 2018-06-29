@@ -82,7 +82,7 @@ class MyHomeViewController: UIViewController , UICollectionViewDelegate , UIColl
                 
                 cell.homeImageView.image = #imageLiteral(resourceName: "uploadImage.png")
                 cell.homeDateLabel.text = "등록한 날짜가 표시됩니다~"
-                cell.homeMemoTextView.text = "안녕하세요~ 저희앱을 사용해주셔서 감사합니다.!!"
+                cell.homeMemoTextView.text = "안녕하세요~ 저의 앱을 사용해주셔서 감사합니다.!!(꾸벅)"
                 
             } else {
                 

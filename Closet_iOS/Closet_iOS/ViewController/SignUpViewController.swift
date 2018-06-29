@@ -14,6 +14,8 @@ import UIKit
 
 class SignUpViewController: UIViewController , Gallery {
 
+    let userdefault = UserDefaults.standard
+    
     var homeController: UIViewController?
     let imagePicker : UIImagePickerController = UIImagePickerController()
 
@@ -62,6 +64,8 @@ class SignUpViewController: UIViewController , Gallery {
     @objc func pressedSignUpBtn( _ sender : UIButton ) {
         
         if( !(signUpEmailTextField.text?.isEmpty)! && !( (signUpPasswordTextField.text?.isEmpty)!) && !( (signUpNicknameTextField.text?.isEmpty)!) ) {
+            
+            userdefault.set(gsno(signUpEmailTextField.text), forKey: "member_email")
             
             Server.reqSignUp(email: signUpEmailTextField.text! , password: signUpPasswordTextField.text! , nickname: signUpNicknameTextField.text! , profile: signUpProfileImageView.image!) { (rescode) in
                 
