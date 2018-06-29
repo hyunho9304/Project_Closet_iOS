@@ -20,7 +20,7 @@ class ClosetUploadViewController: UIViewController , UIPickerViewDelegate , UIPi
     @IBOutlet weak var closetUploadMemoTextField: UITextView!
     
     let typePickerView = UIPickerView()
-    let typeArray : [String] = [ "OUTER" , "TOP" , "BLOUSE" , "BOTTOM" , "ACC" , "SHOES" ]
+    let typeArray : [String] = [ "SUMMER" , "OUTER" , "KNIT" , "TOP" , "BLOUSE" , "DRESS" , "SKIRT" , "PANTS" , "SHOES" , "BAG" , "ACC" ]
     
     //  keyboard
     @IBOutlet var mainView: UIView!
@@ -67,23 +67,34 @@ class ClosetUploadViewController: UIViewController , UIPickerViewDelegate , UIPi
         
         if( !(closetUploadTypeTextField.text?.isEmpty)! && !( (closetUploadMemoTextField.text?.isEmpty)!) &&  (closetUploadImageView.image != #imageLiteral(resourceName: "uploadImage.png") )) {
             
-            Server.reqClosetUpload(closet_type: closetUploadTypeTextField.text! , closet_memo: closetUploadMemoTextField.text! , closet_image: closetUploadImageView.image!) { (rescode) in
+            let mainAlert = UIAlertController(title: "옷 등록", message: "이대로 등록하시겠습니까??", preferredStyle: .alert )
+            let ok = UIAlertAction(title: "확인", style: .default, handler: { (_) in
                 
-                if rescode == 201 {
+                Server.reqClosetUpload(closet_type: self.closetUploadTypeTextField.text! , closet_memo: self.closetUploadMemoTextField.text! , closet_image: self.closetUploadImageView.image!) { (rescode) in
                     
-                    let alert = UIAlertController(title: "옷 등록", message: "새 옷을 등록하였습니다^^", preferredStyle: .alert )
-                    let ok = UIAlertAction(title: "확인", style: .default, handler: { (_) in self.dismiss(animated: true, completion: nil ) } )
-                    alert.addAction( ok )
-                    self.present(alert , animated: true , completion: nil)
-                    
-                } else {
-                    
-                    let alert = UIAlertController(title: "서버", message: "통신상태를 확인하거라", preferredStyle: .alert )
-                    let ok = UIAlertAction(title: "확인", style: .default, handler: nil )
-                    alert.addAction( ok )
-                    self.present(alert , animated: true , completion: nil)
+                    if rescode == 201 {
+                        
+                        let alert = UIAlertController(title: "옷 등록", message: "새 옷을 등록하였습니다^^", preferredStyle: .alert )
+                        let ok = UIAlertAction(title: "확인", style: .default, handler: { (_) in self.dismiss(animated: true, completion: nil ) } )
+                        alert.addAction( ok )
+                        self.present(alert , animated: true , completion: nil)
+                        
+                    } else {
+                        
+                        let alert = UIAlertController(title: "서버", message: "통신상태를 확인하거라", preferredStyle: .alert )
+                        let ok = UIAlertAction(title: "확인", style: .default, handler: nil )
+                        alert.addAction( ok )
+                        self.present(alert , animated: true , completion: nil)
+                    }
                 }
-            }
+                
+            })
+            
+            let cancle = UIAlertAction(title: "취소", style: .cancel, handler: nil )
+            mainAlert.addAction( ok )
+            mainAlert.addAction( cancle )
+            present( mainAlert , animated: true , completion:  nil )
+            
         } else {
             
             let alert = UIAlertController(title: "옷 등록", message: "모두 입력해주세요", preferredStyle: .alert )

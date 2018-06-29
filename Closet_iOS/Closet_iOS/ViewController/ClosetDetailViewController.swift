@@ -47,23 +47,33 @@ class ClosetDetailViewController: UIViewController {
     
     @objc func pressedClosetDetailDeleteBtn( _ sender : UIButton ) {
         
-        Server.reqClosetDrop(closet_index: (detailClothes?.closet_index)!) { (rescode) in
+        let mainAlert = UIAlertController(title: "옷 삭제", message: "정말 삭제하실겁니까..?;;", preferredStyle: .alert )
+        let ok = UIAlertAction(title: "확인", style: .default, handler: { (_) in
             
-            if rescode == 201 {
+            Server.reqClosetDrop(closet_index: (self.detailClothes?.closet_index)!) { (rescode) in
                 
-                let alert = UIAlertController(title: "옷 삭제", message: "옷을 휴지통에 버렸습니다..ㅜㅜ", preferredStyle: .alert )
-                let ok = UIAlertAction(title: "확인", style: .default, handler: { (_) in self.dismiss(animated: true, completion: nil ) } )
-                alert.addAction( ok )
-                self.present(alert , animated: true , completion: nil)
-                
-            } else {
-                
-                let alert = UIAlertController(title: "서버", message: "통신상태를 확인하거라", preferredStyle: .alert )
-                let ok = UIAlertAction(title: "확인", style: .default, handler: nil )
-                alert.addAction( ok )
-                self.present(alert , animated: true , completion: nil)
+                if rescode == 201 {
+                    
+                    let alert = UIAlertController(title: "옷 삭제", message: "옷을 헌옷함에 버렸습니다..ㅜㅜ", preferredStyle: .alert )
+                    let ok = UIAlertAction(title: "확인", style: .default, handler: { (_) in self.dismiss(animated: true, completion: nil ) } )
+                    alert.addAction( ok )
+                    self.present(alert , animated: true , completion: nil)
+                    
+                } else {
+                    
+                    let alert = UIAlertController(title: "서버", message: "통신상태를 확인하거라", preferredStyle: .alert )
+                    let ok = UIAlertAction(title: "확인", style: .default, handler: nil )
+                    alert.addAction( ok )
+                    self.present(alert , animated: true , completion: nil)
+                }
             }
-        }
+            
+        })
+        
+        let cancle = UIAlertAction(title: "취소", style: .cancel, handler: nil )
+        mainAlert.addAction( ok )
+        mainAlert.addAction( cancle )
+        present( mainAlert , animated: true , completion:  nil )
     }
 
 }

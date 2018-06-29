@@ -11,7 +11,7 @@ import Kingfisher
 
 class MyHomeViewController: UIViewController , UICollectionViewDelegate , UICollectionViewDataSource , UICollectionViewDelegateFlowLayout {
     
-    let typeArray = [ "SUMMER" , "OUTER" , "KNIT" , "TOP" , "BLOUSE" , "DRESS" , "SKIRT" , "PANTS" , "SHOES" , "BAG" , "ACC" ]
+    let typeArray : [String] = [ "SUMMER" , "OUTER" , "KNIT" , "TOP" , "BLOUSE" , "DRESS" , "SKIRT" , "PANTS" , "SHOES" , "BAG" , "ACC" ]
     var closet : [ Clothes ] = [Clothes]()
     
     @IBOutlet weak var homeClosetUploadBtn: UIButton!
@@ -54,7 +54,11 @@ class MyHomeViewController: UIViewController , UICollectionViewDelegate , UIColl
         if collectionView == typeCollectionView {
             return typeArray.count
         } else {
-            return closet.count
+            if closet.count == 0 {      //  임의로 없을경우에 넣기위해서
+                return 1
+            } else {
+                return closet.count
+            }
         }
     }
     
@@ -73,9 +77,19 @@ class MyHomeViewController: UIViewController , UICollectionViewDelegate , UIColl
             
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ClothesCollectionViewCell", for: indexPath) as! ClothesCollectionViewCell
             
-            cell.homeImageView.kf.setImage( with: URL( string:gsno(closet[indexPath.row].closet_image)) )
-            cell.homeDateLabel.text = closet[ indexPath.row ].closet_uploadtime
-            cell.homeMemoTextView.text = closet[ indexPath.row ].closet_memo
+            //  임의로 없을경우에 넣기위해서
+            if closet.count == 0 {
+                
+                cell.homeImageView.image = #imageLiteral(resourceName: "uploadImage.png")
+                cell.homeDateLabel.text = "등록한 날짜가 표시됩니다~"
+                cell.homeMemoTextView.text = "안녕하세요~ 저희앱을 사용해주셔서 감사합니다.!!"
+                
+            } else {
+                
+                cell.homeImageView.kf.setImage( with: URL( string:gsno(closet[indexPath.row].closet_image)) )
+                cell.homeDateLabel.text = closet[ indexPath.row ].closet_uploadtime
+                cell.homeMemoTextView.text = closet[ indexPath.row ].closet_memo
+            }
             
             return cell
         }
@@ -109,14 +123,17 @@ class MyHomeViewController: UIViewController , UICollectionViewDelegate , UIColl
             
         } else {
             
-            guard let closetDetailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ClosetDetailViewController" ) as? ClosetDetailViewController else { return }
-            
-            closetDetailVC.detailClothes = closet[ indexPath.row ]
-            
-            closetDetailVC.tempText = self.homeClosetMainType.text
-            
-            
-            present( closetDetailVC, animated: true)
+            if closet.count != 0 {
+                
+                guard let closetDetailVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ClosetDetailViewController" ) as? ClosetDetailViewController else { return }
+                
+                closetDetailVC.detailClothes = closet[ indexPath.row ]
+                
+                closetDetailVC.tempText = self.homeClosetMainType.text
+                
+                
+                present( closetDetailVC, animated: true)
+            }
         }
     }
     
