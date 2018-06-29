@@ -51,9 +51,9 @@ class SignInViewController: UIViewController {
                 
                 if rescode == 201 {
                     
-                    let homeVCtap = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "homeVCtap")
+                    let myHomeVCtap = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "myHomeVCtap")
 
-                    self.present( homeVCtap , animated: true , completion: nil )
+                    self.present( myHomeVCtap , animated: true , completion: nil )
                     
                 } else if rescode == 401 {
                     

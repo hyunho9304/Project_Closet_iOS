@@ -70,9 +70,9 @@ class SignUpViewController: UIViewController , Gallery {
                     let alert = UIAlertController(title: "회원가입 성공", message: "환영환영", preferredStyle: .alert )
                     let ok = UIAlertAction(title: "확인", style: .default, handler: { (_) in
                         
-                        guard let homeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController else { return }
+                        let myHomeVCtap = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "myHomeVCtap")
                         
-                        self.present( homeVC , animated: true , completion: nil )
+                        self.present( myHomeVCtap , animated: true , completion: nil )
                         
                     } )
                     

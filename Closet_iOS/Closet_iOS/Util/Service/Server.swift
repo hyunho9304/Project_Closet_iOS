@@ -183,9 +183,11 @@ struct Server : APIService {
                         let clothesData = try decoder.decode(ClothesData.self , from: value)
                         
                         if( res.response?.statusCode == 200 ){
+                            
                             completion( clothesData.data! , 200 )
                         }
                         else{
+                            
                             completion( clothesData.data! , 500 )
                         }
                         

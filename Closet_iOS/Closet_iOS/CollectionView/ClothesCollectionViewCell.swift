@@ -1,14 +1,14 @@
 //
-//  HomeCollectionViewCell.swift
+//  ClothesCollectionViewCell.swift
 //  Closet_iOS
 //
-//  Created by 박현호 on 2018. 6. 25..
+//  Created by 박현호 on 2018. 6. 29..
 //  Copyright © 2018년 박현호. All rights reserved.
 //
 
 import UIKit
 
-class HomeCollectionViewCell: UICollectionViewCell {
+class ClothesCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var homeImageView: UIImageView!
     @IBOutlet weak var homeMemoTextView: UITextView!
