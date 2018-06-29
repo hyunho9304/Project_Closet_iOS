@@ -11,6 +11,7 @@ import UIKit
 class ClosetDetailViewController: UIViewController {
 
     var detailClothes : Clothes?
+    var tempText : String?
     
     @IBOutlet weak var closetDetailBackBtn: UIButton!
     @IBOutlet weak var closetDetailDeleteBtn: UIButton!
@@ -32,7 +33,7 @@ class ClosetDetailViewController: UIViewController {
         closetDetailImageView.kf.setImage( with : URL( string : gsno( detailClothes?.closet_image ) ) )
         closetDetailMemoTextField.text = detailClothes?.closet_memo
         closetDetailDateLabel.text = detailClothes?.closet_uploadtime
-        
+        closetDetailTypeTextField.text = tempText
         
         closetDetailBackBtn.addTarget(self, action: #selector(self.pressedClosetDetailBackBtn(_:)), for: UIControlEvents.touchUpInside)
     }
