@@ -546,7 +546,7 @@
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ee-3V-yYE">
+                                                        <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ee-3V-yYE">
                                                             <rect key="frame" x="32" y="36" width="310" height="63"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
@@ -667,7 +667,7 @@
                                     <constraint firstAttribute="width" secondItem="yO7-Ws-ZiD" secondAttribute="height" multiplier="1:1" id="IYC-ZN-RZQ"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="옷 종류" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yTf-98-qnw">
+                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="옷 종류" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yTf-98-qnw">
                                 <rect key="frame" x="21" y="443" width="143" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="yTf-98-qnw" secondAttribute="height" multiplier="143:30" id="F1T-3x-OqN"/>
@@ -679,7 +679,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zfn-I4-B7Y">
                                 <rect key="frame" x="21" y="498" width="332" height="109"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Bd-UT-UP8">
+                                    <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Bd-UT-UP8">
                                         <rect key="frame" x="8" y="36" width="316" height="64"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -754,7 +754,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RKe-a1-Xc2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2444" y="90"/>
+            <point key="canvasLocation" x="3239" y="90"/>
         </scene>
         <!--Closet Upload View Controller-->
         <scene sceneID="WMh-Q3-SPq">
@@ -886,7 +886,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3180" y="90"/>
+            <point key="canvasLocation" x="2463" y="90"/>
         </scene>
         <!--Item-->
         <scene sceneID="oGv-zf-wQj">

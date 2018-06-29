@@ -199,6 +199,36 @@ struct Server : APIService {
             }
         }
     }
+    
+    //  옷 삭제
+    static func reqClosetDrop( closet_index : Int , completion : @escaping (_ status : Int ) -> Void ) {
+        
+        let URL = url( "/closet/drop" )
+        
+        let body: [String: Any] = [
+            "closet_index" : closet_index
+        ]
+        
+        Alamofire.request(URL, method: .post, parameters: body, encoding: JSONEncoding.default, headers: nil).responseData() { res in
+            
+            switch res.result {
+                
+            case .success:
+                
+                if( res.response?.statusCode == 201 ){
+                    completion( 201 )
+                }
+                else {
+                    completion(500 )
+                }
+                break
+                
+            case .failure(let err):
+                print(err.localizedDescription)
+                break
+            }
+        }
+    }
 
     
 }
