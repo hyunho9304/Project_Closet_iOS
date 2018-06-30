@@ -37,15 +37,25 @@ class MyHomeViewController: UIViewController , UICollectionViewDelegate , UIColl
         clothesCollectionView.delegate = self
         clothesCollectionView.dataSource = self
         
-        homeClosetUploadBtn.addTarget(self, action: #selector(self.pressedhomeClosetUploadBtn(_:)), for: UIControlEvents.touchUpInside)
+        homeClosetUploadBtn.addTarget(self, action: #selector(self.pressedHomeClosetUploadBtn(_:)), for: UIControlEvents.touchUpInside)
+        
+        homeClosetCodyRoomBtn.addTarget(self, action: #selector(self.pressedHomeClosetCodyRoomBtn(_:)), for: UIControlEvents.touchUpInside)
     }
     
     //  새 옷 등록
-    @objc func pressedhomeClosetUploadBtn( _ sender : UIButton ) {
+    @objc func pressedHomeClosetUploadBtn( _ sender : UIButton ) {
         
         guard let closetUploadVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ClosetUploadViewController") as? ClosetUploadViewController else { return }
         
         self.present( closetUploadVC , animated: true , completion: nil )
+    }
+    
+    //  코디 룸 이동
+    @objc func pressedHomeClosetCodyRoomBtn( _ sender : UIButton ) {
+        
+        guard let codyRoomVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CodyRoomViewController") as? CodyRoomViewController else { return }
+        
+        self.present( codyRoomVC , animated: true , completion: nil )
     }
     
     //  cell 의 개수
@@ -138,7 +148,6 @@ class MyHomeViewController: UIViewController , UICollectionViewDelegate , UIColl
     }
     
     //  cell 크기 비율
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         if collectionView == typeCollectionView {
@@ -152,12 +161,7 @@ class MyHomeViewController: UIViewController , UICollectionViewDelegate , UIColl
     //  cell 간 가로 간격 ( horizental 이라서 가로를 사용해야 한다 )
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         
-        if collectionView == typeCollectionView {
-            return 0
-        }
-        else {
-            return 0
-        }
+        return 0
     }
 
 

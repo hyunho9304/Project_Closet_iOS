@@ -19,6 +19,18 @@
 		BE857E5920E673410077396F /* MyHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE857E5820E673410077396F /* MyHomeViewController.swift */; };
 		BE857E5B20E6736B0077396F /* TypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE857E5A20E6736B0077396F /* TypeCollectionViewCell.swift */; };
 		BE857E5D20E6738F0077396F /* ClothesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE857E5C20E6738F0077396F /* ClothesCollectionViewCell.swift */; };
+		BE857E5F20E6D5040077396F /* CodyRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE857E5E20E6D5040077396F /* CodyRoom.swift */; };
+		BE857E6120E6EC3D0077396F /* CodyRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE857E6020E6EC3D0077396F /* CodyRoomViewController.swift */; };
+		BE857E6320E6EC6F0077396F /* CodyOuterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE857E6220E6EC6F0077396F /* CodyOuterCollectionViewCell.swift */; };
+		BE857E6520E6EC7F0077396F /* CodyDressCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE857E6420E6EC7F0077396F /* CodyDressCollectionViewCell.swift */; };
+		BE857E6720E6EC910077396F /* CodyKnitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE857E6620E6EC910077396F /* CodyKnitCollectionViewCell.swift */; };
+		BE857E6920E6EC9F0077396F /* CodyTopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE857E6820E6EC9F0077396F /* CodyTopCollectionViewCell.swift */; };
+		BE857E6B20E6ECAF0077396F /* CodyBlouseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE857E6A20E6ECAF0077396F /* CodyBlouseCollectionViewCell.swift */; };
+		BE857E6D20E6ECC30077396F /* CodyPantsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE857E6C20E6ECC30077396F /* CodyPantsCollectionViewCell.swift */; };
+		BE857E6F20E6ECD10077396F /* CodySkirtCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE857E6E20E6ECD00077396F /* CodySkirtCollectionViewCell.swift */; };
+		BE857E7120E6ECE10077396F /* CodyBagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE857E7020E6ECE10077396F /* CodyBagCollectionViewCell.swift */; };
+		BE857E7320E6ECF30077396F /* CodyShoesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE857E7220E6ECF30077396F /* CodyShoesCollectionViewCell.swift */; };
+		BE857E7520E6ED050077396F /* CodyAccCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE857E7420E6ED050077396F /* CodyAccCollectionViewCell.swift */; };
 		BEB6CD4720D95D9700B76E10 /* APIservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB6CD4620D95D9700B76E10 /* APIservice.swift */; };
 		BEB6CD4920D95F0F00B76E10 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB6CD4820D95F0F00B76E10 /* Extension.swift */; };
 		BEB6CD4B20D97A3000B76E10 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB6CD4A20D97A3000B76E10 /* SignUpViewController.swift */; };
@@ -42,6 +54,18 @@
 		BE857E5820E673410077396F /* MyHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHomeViewController.swift; sourceTree = "<group>"; };
 		BE857E5A20E6736B0077396F /* TypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCollectionViewCell.swift; sourceTree = "<group>"; };
 		BE857E5C20E6738F0077396F /* ClothesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesCollectionViewCell.swift; sourceTree = "<group>"; };
+		BE857E5E20E6D5040077396F /* CodyRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodyRoom.swift; sourceTree = "<group>"; };
+		BE857E6020E6EC3D0077396F /* CodyRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodyRoomViewController.swift; sourceTree = "<group>"; };
+		BE857E6220E6EC6F0077396F /* CodyOuterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodyOuterCollectionViewCell.swift; sourceTree = "<group>"; };
+		BE857E6420E6EC7F0077396F /* CodyDressCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodyDressCollectionViewCell.swift; sourceTree = "<group>"; };
+		BE857E6620E6EC910077396F /* CodyKnitCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodyKnitCollectionViewCell.swift; sourceTree = "<group>"; };
+		BE857E6820E6EC9F0077396F /* CodyTopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodyTopCollectionViewCell.swift; sourceTree = "<group>"; };
+		BE857E6A20E6ECAF0077396F /* CodyBlouseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodyBlouseCollectionViewCell.swift; sourceTree = "<group>"; };
+		BE857E6C20E6ECC30077396F /* CodyPantsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodyPantsCollectionViewCell.swift; sourceTree = "<group>"; };
+		BE857E6E20E6ECD00077396F /* CodySkirtCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodySkirtCollectionViewCell.swift; sourceTree = "<group>"; };
+		BE857E7020E6ECE10077396F /* CodyBagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodyBagCollectionViewCell.swift; sourceTree = "<group>"; };
+		BE857E7220E6ECF30077396F /* CodyShoesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodyShoesCollectionViewCell.swift; sourceTree = "<group>"; };
+		BE857E7420E6ED050077396F /* CodyAccCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodyAccCollectionViewCell.swift; sourceTree = "<group>"; };
 		BEB6CD4620D95D9700B76E10 /* APIservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIservice.swift; sourceTree = "<group>"; };
 		BEB6CD4820D95F0F00B76E10 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		BEB6CD4A20D97A3000B76E10 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +98,16 @@
 			children = (
 				BE857E5A20E6736B0077396F /* TypeCollectionViewCell.swift */,
 				BE857E5C20E6738F0077396F /* ClothesCollectionViewCell.swift */,
+				BE857E6220E6EC6F0077396F /* CodyOuterCollectionViewCell.swift */,
+				BE857E6420E6EC7F0077396F /* CodyDressCollectionViewCell.swift */,
+				BE857E6620E6EC910077396F /* CodyKnitCollectionViewCell.swift */,
+				BE857E6820E6EC9F0077396F /* CodyTopCollectionViewCell.swift */,
+				BE857E6A20E6ECAF0077396F /* CodyBlouseCollectionViewCell.swift */,
+				BE857E6C20E6ECC30077396F /* CodyPantsCollectionViewCell.swift */,
+				BE857E6E20E6ECD00077396F /* CodySkirtCollectionViewCell.swift */,
+				BE857E7020E6ECE10077396F /* CodyBagCollectionViewCell.swift */,
+				BE857E7220E6ECF30077396F /* CodyShoesCollectionViewCell.swift */,
+				BE857E7420E6ED050077396F /* CodyAccCollectionViewCell.swift */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -127,6 +161,7 @@
 				BE5BBB4E20E3A39A0073CF2F /* ClosetUploadViewController.swift */,
 				BE857E5620E554AF0077396F /* ClosetDetailViewController.swift */,
 				BE857E5820E673410077396F /* MyHomeViewController.swift */,
+				BE857E6020E6EC3D0077396F /* CodyRoomViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -154,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				BE857E5420E515AA0077396F /* Clothes.swift */,
+				BE857E5E20E6D5040077396F /* CodyRoom.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -300,17 +336,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE857E6D20E6ECC30077396F /* CodyPantsCollectionViewCell.swift in Sources */,
 				BE76B22E20D94E5300AF8B96 /* AppDelegate.swift in Sources */,
 				BE857E5D20E6738F0077396F /* ClothesCollectionViewCell.swift in Sources */,
 				BEB6CD4D20D97A5600B76E10 /* SignInViewController.swift in Sources */,
 				BEB6CD4720D95D9700B76E10 /* APIservice.swift in Sources */,
 				BEB6CD4920D95F0F00B76E10 /* Extension.swift in Sources */,
+				BE857E6320E6EC6F0077396F /* CodyOuterCollectionViewCell.swift in Sources */,
 				BE857E5B20E6736B0077396F /* TypeCollectionViewCell.swift in Sources */,
+				BE857E6B20E6ECAF0077396F /* CodyBlouseCollectionViewCell.swift in Sources */,
+				BE857E6920E6EC9F0077396F /* CodyTopCollectionViewCell.swift in Sources */,
 				BE3D348620DA3ACD00655FB8 /* Server.swift in Sources */,
 				BE857E5720E554AF0077396F /* ClosetDetailViewController.swift in Sources */,
+				BE857E6520E6EC7F0077396F /* CodyDressCollectionViewCell.swift in Sources */,
+				BE857E6120E6EC3D0077396F /* CodyRoomViewController.swift in Sources */,
+				BE857E7120E6ECE10077396F /* CodyBagCollectionViewCell.swift in Sources */,
+				BE857E7520E6ED050077396F /* CodyAccCollectionViewCell.swift in Sources */,
 				BE857E5920E673410077396F /* MyHomeViewController.swift in Sources */,
+				BE857E6F20E6ECD10077396F /* CodySkirtCollectionViewCell.swift in Sources */,
+				BE857E6720E6EC910077396F /* CodyKnitCollectionViewCell.swift in Sources */,
+				BE857E7320E6ECF30077396F /* CodyShoesCollectionViewCell.swift in Sources */,
 				BE5BBB4F20E3A39A0073CF2F /* ClosetUploadViewController.swift in Sources */,
 				BEB6CD4B20D97A3000B76E10 /* SignUpViewController.swift in Sources */,
+				BE857E5F20E6D5040077396F /* CodyRoom.swift in Sources */,
 				BE857E5520E515AA0077396F /* Clothes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

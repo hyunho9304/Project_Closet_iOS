@@ -231,6 +231,49 @@ struct Server : APIService {
             }
         }
     }
+    
+    //  타입에 맞는 옷 이미지 가져오기
+    static func reqCodyRoom( closet_type : String , completion : @escaping ([String] , _ status : Int ) -> Void ) {
+        
+        let userdefault = UserDefaults.standard
+        guard let member_email = userdefault.string( forKey: "member_email" ) else { return }
+        
+        let URL = url( "/closet/codyroom/?member_email=\(member_email)&closet_type=\(closet_type)")
+        
+        Alamofire.request(URL, method: .get , parameters: nil, encoding: JSONEncoding.default, headers: nil).responseData() { res in
+            
+            switch res.result {
+                
+            case .success:
+                
+                if let value = res.result.value {
+                    
+                    
+                    let decoder = JSONDecoder()
+                    
+                    do {
+                        
+                        let codyRoomData = try decoder.decode(CodyRoomData.self , from: value)
+                        
+                        if( res.response?.statusCode == 200 ){
+                            
+                            completion( codyRoomData.data! , 200 )
+                        }
+                        else{
+                            
+                            completion( codyRoomData.data! , 500 )
+                        }
+                        
+                    } catch {
+                    }
+                }
+                
+            case .failure(let err):
+                print(err.localizedDescription)
+                break
+            }
+        }
+    }
 
     
 }
