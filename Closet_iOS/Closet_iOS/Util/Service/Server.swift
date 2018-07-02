@@ -211,7 +211,7 @@ struct Server : APIService {
             "closet_index" : closet_index
         ]
         
-        Alamofire.request(URL, method: .post, parameters: body, encoding: JSONEncoding.default, headers: nil).responseData() { res in
+        Alamofire.request(URL, method: .delete, parameters: body, encoding: JSONEncoding.default, headers: nil).responseData() { res in
             
             switch res.result {
                 

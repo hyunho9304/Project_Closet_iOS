@@ -65,7 +65,7 @@ class ClosetUploadViewController: UIViewController , UIPickerViewDelegate , UIPi
     //  새옷 업로드버튼 클릭
     @objc func pressedClosetUploadCompletionBtn( _ sender : UIButton ) {
         
-        if( !(closetUploadTypeTextField.text?.isEmpty)! && !( (closetUploadMemoTextField.text?.isEmpty)!) &&  (closetUploadImageView.image != #imageLiteral(resourceName: "uploadImage.png") )) {
+        if( !(closetUploadTypeTextField.text?.isEmpty)! &&  (closetUploadImageView.image != #imageLiteral(resourceName: "uploadImage.png") )) {
             
             let mainAlert = UIAlertController(title: "옷 등록", message: "이대로 등록하시겠습니까??", preferredStyle: .alert )
             let ok = UIAlertAction(title: "확인", style: .default, handler: { (_) in
