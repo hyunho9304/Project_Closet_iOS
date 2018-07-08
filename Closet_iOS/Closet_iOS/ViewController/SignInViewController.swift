@@ -59,7 +59,7 @@ class SignInViewController: UIViewController {
                     
                     if flag == 1 {
                         
-                        let alert = UIAlertController(title: "로그인 실패", message: "이메일이 없거든요?;;", preferredStyle: .alert )
+                        let alert = UIAlertController(title: "로그인 실패", message: "이메일이 없습니다", preferredStyle: .alert )
                         let ok = UIAlertAction(title: "확인", style: .default, handler: nil )
                         alert.addAction( ok )
                         self.present(alert , animated: true , completion: nil)
@@ -75,7 +75,7 @@ class SignInViewController: UIViewController {
                     }
                 } else {
                     
-                    let alert = UIAlertController(title: "서버", message: "통신상태를 확인하거라", preferredStyle: .alert )
+                    let alert = UIAlertController(title: "서버", message: "통신상태를 확인해주세요", preferredStyle: .alert )
                     let ok = UIAlertAction(title: "확인", style: .default, handler: nil )
                     alert.addAction( ok )
                     self.present(alert , animated: true , completion: nil)

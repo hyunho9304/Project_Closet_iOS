@@ -81,7 +81,7 @@ class ClosetUploadViewController: UIViewController , UIPickerViewDelegate , UIPi
                         
                     } else {
                         
-                        let alert = UIAlertController(title: "서버", message: "통신상태를 확인하거라", preferredStyle: .alert )
+                        let alert = UIAlertController(title: "서버", message: "통신상태를 확인해주세요", preferredStyle: .alert )
                         let ok = UIAlertAction(title: "확인", style: .default, handler: nil )
                         alert.addAction( ok )
                         self.present(alert , animated: true , completion: nil)
