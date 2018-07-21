@@ -59,6 +59,7 @@ class SignInViewController: UIViewController {
                     
                     if flag == 1 {
                         
+                        
                         let alert = UIAlertController(title: "로그인 실패", message: "이메일이 없습니다", preferredStyle: .alert )
                         let ok = UIAlertAction(title: "확인", style: .default, handler: nil )
                         alert.addAction( ok )
@@ -71,6 +72,7 @@ class SignInViewController: UIViewController {
                         let ok = UIAlertAction(title: "확인", style: .default, handler: nil )
                         alert.addAction( ok )
                         self.present(alert , animated: true , completion: nil)
+                        
                         
                     }
                 } else {
