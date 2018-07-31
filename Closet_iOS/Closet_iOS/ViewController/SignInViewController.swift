@@ -32,6 +32,7 @@ class SignInViewController: UIViewController {
         
         signUpBtn.addTarget(self, action: #selector(self.pressedSignUpBtn(_:)), for: UIControlEvents.touchUpInside)
         signInBtn.addTarget(self, action: #selector(self.pressedSignInBtn(_:)), for: UIControlEvents.touchUpInside)
+        
     }
     
     @objc func pressedSignUpBtn( _ sender : UIButton ) {

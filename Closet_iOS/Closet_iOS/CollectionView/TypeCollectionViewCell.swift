@@ -12,3 +12,4 @@ class TypeCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var homeTypeLabel: UILabel!
 }
+
